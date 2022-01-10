@@ -106,8 +106,27 @@ function generatePassword() {
   symbolSelector();
   console.log(selectSymbols);
 
+  var characters = lowercaseLetters;
+  var password = "";
+  if ( selectUpperAlpha && selectNumber && selectSymbols) {
+    characters += + selectUpperAlpha + selectNumber + selectSymbols;
+  } else if (selectUpperAlpha && selectNumber) {
+    characters += selectUpperAlpha + selectNumber;
+  } else if (selectNumber && selectSymbols) {
+    characters += selectNumber + selectSymbols;
+  } else if (selectUppercase && selectSymbols) {
+    characters += selectUppercase + selectSymbols;
+  } else if (selectUppercase) {
+    characters += uppercaseChar;
+  } else if (selectNumber) {
+    characters += numberChar;
+  } else if (selectSymbols) {
+    characters += selectSymbols;
+  } else {
+    characters === lowercaseLetters;
+  }
 
-  
+
 
 // Write password to the #password input
 function writePassword() {
