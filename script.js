@@ -35,7 +35,7 @@ function generatePasswordLength(){
 function upperAlphaSelector (){
   selectUpperAlpha = prompt("would you want to include uppercase letters. Yes or No")
   if (selectUpperAlpha ===null || selectUpperAlpha ==="") {
-    alert("please select correct option");
+    alert("please select Yes or No");
     upperAlphaSelector(); 
   } else if (selectUpperAlpha === "Yes" || selectUpperAlpha ==="yes") {
     selectUpperAlpha = true;
@@ -60,8 +60,37 @@ function upperAlphaSelector (){
 function numberSelector (){
   selectNumber = prompt ("Would you like to include numbers. Yes or No")
   if (selectNumber ===null || selectNumber === "") {
-    alert("please type in only numbers")
+    alert("please select Yes or No") ;
+    numberSelector();
+  }else if (selectNumber === "Yes" || selectNumber === "yes") {
+    selectNumber = true;
+    return selectNumber ;
+
+  } else if (selectNumber === "No" || selectNumber === "no"){
+    selectNumber = false;
+    return selectNumber;
+  } else {
+    alert ("Please select Yes or No")
   }
+  return selectNumber
+  
+}
+
+function symbolSelector(){
+  selectSymbols = prompt ("Would you like to include symbols. Yes or No")
+  if (selectSymbols === null || selectSymbols === "") {
+    alert ("please select Yes or No") ;
+    symbolSelector();
+  }else if (selectSymbols === "Yes" || selectSymbols === "yes") {
+    selectSymbols = true;
+    return selectSymbols ;
+  } else if (selectSymbols === "No" || selectSymbols === "no"){
+    selectSymbols = false;
+    return selectSymbols;
+  } else {
+    alert ("Please select Yes or No")
+  }
+  return selectSymbols
 }
 
 // Write password to the #password input
