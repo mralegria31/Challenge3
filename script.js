@@ -20,7 +20,7 @@ var selectSymbols;
 function generatePasswordLength(){
   passwordLength = prompt("create a password between 8 to 128 character length") ;
   if (passwordLength < 8 || passwordLength > 128) {
-    alert("Password must be less than 128") ; 
+    alert("Password must be betweem 8 to 128") ; 
     generatePasswordLength(); 
   } else if (isNaN(passwordLength)) {
     alert ("your input has to be of numeric value")
@@ -106,7 +106,7 @@ function generatePassword() {
   symbolSelector();
   console.log(selectSymbols);
 
-  var characters = lowercaseLetters;
+  var characters = alpha;
   var password = "";
   if ( selectUpperAlpha && selectNumber && selectSymbols) {
     characters += + selectUpperAlpha + selectNumber + selectSymbols;
@@ -117,29 +117,31 @@ function generatePassword() {
   } else if (selectUppercase && selectSymbols) {
     characters += selectUppercase + selectSymbols;
   } else if (selectUppercase) {
-    characters += uppercaseChar;
+    characters += selectUpperAlpha ;
   } else if (selectNumber) {
     characters += selectNumber;
   } else if (selectSymbols) {
     characters += selectSymbols;
   } else {
-    characters === lowercaseLetters;
+    characters === alpha;
   }
 
+  for (var i = 0; i <passwordLength; i++) {
+    password += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return password;
+}
 
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function writePassword() { 
+  
+  var newGeneratePassword = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = newGeneratePassword;
 
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
