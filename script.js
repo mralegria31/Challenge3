@@ -1,4 +1,8 @@
 // Assignment code here
+var alpha = "abcdefghijklmnopqrstuvwxyz";
+var upperAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var numbers = "0123456789" ;
+var symbols = "#$%&'()!+,-./:;<=>?@[]^_`{|}~";
 
 
 // Get references to the #generate element
@@ -15,3 +19,7 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
