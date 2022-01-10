@@ -32,15 +32,36 @@ function generatePasswordLength(){
 }
 
 
-function UpperAlphaselector (){
+function upperAlphaSelector (){
   selectUpperAlpha = prompt("would you want to include uppercase letters. Yes or No")
-  if (selectUpperAlpha ===null || selectUpperAlpha ==="");{
-    alert("please select correct letter size");
-    UpperAlphaselector(); 
-  } else if ()
+  if (selectUpperAlpha ===null || selectUpperAlpha ==="") {
+    alert("please select correct option");
+    upperAlphaSelector(); 
+  } else if (selectUpperAlpha === "Yes" || selectUpperAlpha ==="yes") {
+    selectUpperAlpha = true;
+    return selectUpperAlpha ;
+     
+  } else if (selectUpperAlpha === "No" || selectUpperAlpha === "no"){
+    selectUpperAlpha = false;
+    return selectUpperAlpha ;
+    
+  } else {
+    alert ( "Please select Yes or No.")
+  }
+
+
+  return selectUpperAlpha 
+
   
 
 
+}
+
+function numberSelector (){
+  selectNumber = prompt ("Would you like to include numbers. Yes or No")
+  if (selectNumber ===null || selectNumber === "") {
+    alert("please type in only numbers")
+  }
 }
 
 // Write password to the #password input
