@@ -103,20 +103,20 @@ function generatePassword() {
 
   var characters = alpha;
   var password = "";
-  if ( selectUpperAlpha && selectNumber && selectSymbols) {
-    characters += + upperAlpha + selectNumber + selectSymbols;
+  if (selectUpperAlpha && selectNumber && selectSymbols) {
+    characters += + upperAlpha + numbers + symbols;
   } else if (selectUpperAlpha && selectNumber) {
-    characters += upperAlpha + selectNumber;
+    characters += upperAlpha + numbers;
   } else if (selectNumber && selectSymbols) {
-    characters += selectNumber + selectSymbols;
+    characters += numbers + symbols;
   } else if (selectUpperAlpha && selectSymbols) {
-    characters += upperAlpha + selectSymbols;
+    characters += upperAlpha + symbols;
   } else if (selectUpperAlpha) {
     characters += selectUpperAlpha ;
   } else if (selectNumber) {
-    characters += selectNumber;
+    characters += numbers;
   } else if (selectSymbols) {
-    characters += selectSymbols;
+    characters += symbols;
   } else {
     characters === alpha;
   }
