@@ -119,7 +119,7 @@ function generatePassword() {
   } else if (selectUppercase) {
     characters += uppercaseChar;
   } else if (selectNumber) {
-    characters += numberChar;
+    characters += selectNumber;
   } else if (selectSymbols) {
     characters += selectSymbols;
   } else {
