@@ -1,10 +1,5 @@
 // Assignment code here
 
-
-
-
-
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -109,14 +104,14 @@ function generatePassword() {
   var characters = alpha;
   var password = "";
   if ( selectUpperAlpha && selectNumber && selectSymbols) {
-    characters += + selectUpperAlpha + selectNumber + selectSymbols;
+    characters += + upperAlpha + selectNumber + selectSymbols;
   } else if (selectUpperAlpha && selectNumber) {
-    characters += selectUpperAlpha + selectNumber;
+    characters += upperAlpha + selectNumber;
   } else if (selectNumber && selectSymbols) {
     characters += selectNumber + selectSymbols;
-  } else if (selectUppercase && selectSymbols) {
-    characters += selectUppercase + selectSymbols;
-  } else if (selectUppercase) {
+  } else if (selectUpperAlpha && selectSymbols) {
+    characters += upperAlpha + selectSymbols;
+  } else if (selectUpperAlpha) {
     characters += selectUpperAlpha ;
   } else if (selectNumber) {
     characters += selectNumber;
