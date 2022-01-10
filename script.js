@@ -12,22 +12,22 @@ var alpha = "abcdefghijklmnopqrstuvwxyz";
 var upperAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var numbers = "0123456789" ;
 var symbols = "#$%&'()!+,-./:;<=>?@[]^_`{|}~";
-var passwordlength
+var passwordLength
 var selectUpperAlpha;
 var selectNumber;
 var selectSymbols;
 
 function generatePasswordLength(){
-  passwordlength = prompt("create a password between 8 to 128 character length") ;
-  if (passwordlength < 8 || passwordlength > 128) {
+  passwordLength = prompt("create a password between 8 to 128 character length") ;
+  if (passwordLength < 8 || passwordLength > 128) {
     alert("Password must be less than 128") ; 
     generatePasswordLength(); 
-  } else if (isNaN(passwordlength)) {
+  } else if (isNaN(passwordLength)) {
     alert ("your input has to be of numeric value")
   } else{
     window.alert("The next few questions will help select how you want your password")
   }
-    return passwordlength ;
+    return passwordLength ;
   
 }
 
@@ -92,6 +92,22 @@ function symbolSelector(){
   }
   return selectSymbols
 }
+
+function generatePassword() {
+  generatePasswordLength();
+  console.log(passwordLength) ;
+
+  upperAlphaSelector();
+  console.log(selectUpperAlpha);
+
+  numberSelector();
+  console.log(selectNumber);
+
+  symbolSelector();
+  console.log(selectSymbols);
+
+
+  
 
 // Write password to the #password input
 function writePassword() {
